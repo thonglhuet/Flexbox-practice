@@ -4,7 +4,9 @@ To learn flexbox well, practice with some patterns with your own code is very go
 This is practice lessions, assume you've learned some basic concepts with flexbox. 
 
 1. Site header
+
 ![Screenshot from 2020-10-26 05-50-40](https://user-images.githubusercontent.com/25763557/97121244-61775d80-174f-11eb-8af1-1993c6b7fdfe.png)
+
 If you've learned float before, the typical way to layout this would be wrap the logo and left element with one container, and the settings & Logout with another. 
 Use float to push one to the left, and another to the right. You still need clearfix to clear float for another element.
 
@@ -84,6 +86,7 @@ HTML
 
 
 You can center 1 element with
+
 **flex-direction: column** This specify the main axis(default is row).
 **justify-content: center** groups the children as close as possible to one another, make element center in the main-axis 
 **align-items: center** centers the children along this axis(cross axis), having a similar effect as settingtext-align: center.
@@ -141,6 +144,7 @@ You can center 1 element with
 ```
 
 3. Card items
+
 ![Screenshot from 2020-10-26 06-19-48](https://user-images.githubusercontent.com/25763557/97121942-a18d0f00-1754-11eb-9c6c-96fd56d99e4f.png)
 
 
