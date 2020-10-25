@@ -79,6 +79,10 @@ HTML
 
 
 2. Center our element 
+
+![Screenshot from 2020-10-26 06-15-38](https://user-images.githubusercontent.com/25763557/97121928-799dab80-1754-11eb-968b-7ad7292870e2.png)
+
+
 You can center 1 element with
 **flex-direction: column** This specify the main axis(default is row).
 **justify-content: center** groups the children as close as possible to one another, make element center in the main-axis 
