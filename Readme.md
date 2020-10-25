@@ -141,8 +141,230 @@ You can center 1 element with
 ```
 
 3. Card items
+![Screenshot from 2020-10-26 06-19-48](https://user-images.githubusercontent.com/25763557/97121942-a18d0f00-1754-11eb-9c6c-96fd56d99e4f.png)
+
+
 We can make children element span equally with flexbox.
 
 Unlike the ones we’ve used so far, this property is applied to the children, not the container.
+We will use flex property, this is  a flexbox short-hand
 
-We need 
+```css
+.card__containner {
+	display: flex;
+	border: 1px solid #CAD0D2;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.card__containner__card {
+	flex: 1 1 0%;
+	border: none;
+	border-radius: 0;
+}
+
+.card__containner__card+.card__containner__card {
+	border-left: 1px solid #D7DBDD;
+}
+
+.card__containner__cardDescription {
+	flex: 1 1 auto;
+}
+
+```
+
+```html
+<div class="card__containner">
+    <div class="card card__containner__card">
+        <div class="card__description card__containner__cardDescription">
+            <div class="icon fa fa-thumbs-o-up card__descriptionIcon"></div>
+            <div class="card__descriptionText">Trial</div>
+        </div>
+        <div class="card__price">Free!</div>
+    </div>
+    <div class="card card__containner__card">
+        <div class="card__description card__containner__cardDescription">
+            <div class="icon fa fa-trophy card__descriptionIcon"></div>
+            <div class="card__descriptionText">Basic tier<br />(most popular)</div>
+        </div>
+        <div class="card__price">$10.00</div>
+    </div>
+    <div class="card card__containner__card">
+        <div class="card__description card__containner__cardDescription">
+            <div class="icon fa fa-bolt card__descriptionIcon"></div>
+            <div class="card__descriptionText">Advanced tier<br />(only for enterprise-level professionals)</div>
+        </div>
+        <div class="card__price">$6,000.00</div>
+    </div>
+</div>
+
+```
+
+
+4. The last one, this is the last difficult example. I did not completed this fully yet.
+
+![Screenshot from 2020-10-26 06-45-01](https://user-images.githubusercontent.com/25763557/97122209-cc786280-1756-11eb-8e35-2f23748fa333.png)
+
+```html
+<div class="stream">
+    <div class="post">
+        <div class="postUser">
+            <div class="postUser__portrait">
+                <span class="icon fa fa-user-circle-o"></span>
+            </div>
+            <div class="postUser__name">CJ C.</div>
+        </div>
+        <div class="postBody">
+            <div class="postBody__content">
+                do something
+            </div>
+            <div class="postBody__date">
+                May 27
+            </div>
+        </div>
+    </div>
+
+    <div class="post">
+        <div class="postUser">
+            <div class="postUser__portrait">
+                <span class="icon fa fa-user-circle-o"></span>
+            </div>
+            <div class="postUser__name">Jatesh V.</div>
+        </div>
+        <div class="postBody">
+            <div class="postBody__content">
+                flexbox learning pattern
+            </div>
+            <div class="postBody__date">
+                May 28
+            </div>
+        </div>
+    </div>
+
+    <div class="post">
+        <div class="postUser">
+            <div class="postUser__portrait">
+                <span class="icon fa fa-user-circle-o"></span>
+            </div>
+            <div class="postUser__name">Damien S.</div>
+        </div>
+        <div class="postBody">
+            <div class="postBody__content">
+                cross the line
+            </div>
+            <div class="postBody__date">
+                June 1
+            </div>
+        </div>
+    </div>
+
+    <div class="post">
+        <div class="postUser">
+            <div class="postUser__portrait">
+                <span class="icon fa fa-user-circle-o"></span>
+            </div>
+            <div class="postUser__name">Ziggie G.</div>
+        </div>
+        <div class="postBody">
+            <div class="postBody__content">
+                puff
+            </div>
+            <div class="postBody__date">
+                June 5
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+```css
+.stream {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.post+.post {
+	margin-bottom: 5px;
+}
+.post {
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.postUser {
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	padding-bottom: 10px;
+}
+
+.postUser__portrait {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+	width: 100px;
+	height: 90px;
+	font-size: 70px;
+	line-height: 0;
+}
+
+.postUser__name {
+	color: #57727C;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+}
+
+.postBody {
+	-ms-flex: 1 1 0%;
+	flex: 1 1 0%;
+	position: relative;
+	padding: 15px;
+	border: 1px solid #CAD0D2;
+	border-radius: 4px;
+}
+
+.postBody:after,
+.postBody:before {
+	right: 100%;
+	top: 35px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.postBody:after {
+	border-color: transparent;
+	border-right-color: #ffffff;
+	border-width: 8px;
+	margin-top: -8px;
+}
+
+.postBody:before {
+	border-color: transparent;
+	border-right-color: #CAD0D2;
+	border-width: 9px;
+	margin-top: -9px;
+}
+
+.postBody__content {
+	color: #57727C;
+	font-size: 12px;
+}
+
+.postBody__date {
+	margin-top: 5px;
+	color: #86969C;
+	font-size: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+```
+
